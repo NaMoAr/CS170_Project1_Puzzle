@@ -38,7 +38,7 @@ Node::Node(const Node& p) {
 	child_4 = p.child_4;
 	
 }
-void Node::operator=(const Node& p) {		
+/*void Node::operator=(const Node& p) {		
 	problem = p.problem;
 	uniform_cost = p.uniform_cost;
 	heuristic_cost = p.heuristic_cost;
@@ -49,7 +49,7 @@ void Node::operator=(const Node& p) {
 	child_3 = p.child_3;
 	child_4 = p.child_4;
 
-}
+}*/
 void Node::print() {				
 	print_state(problem);
 }

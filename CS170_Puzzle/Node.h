@@ -24,7 +24,7 @@ struct Node
 	Node(vector<vector<int>> p, int uniformCost);
 	Node(const Node& p);
 
-	void operator=(const Node& p);
+	//void operator=(const Node& p);
 
 	void print();
 };
