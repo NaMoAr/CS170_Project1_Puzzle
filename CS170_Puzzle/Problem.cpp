@@ -157,4 +157,3 @@ void Problem::print_state(vector<vector<int>> problem)
 		cout << endl;
 	}
 }
-
