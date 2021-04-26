@@ -52,8 +52,8 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 	frontier.push(state);
 
 	int depth = 0;
-	int num_nodes = 0;
-	int algorithm_expansion = 0;
+	int num_nodes = 1;
+	int algorithm_expansion = 1;
 	while (!frontier.empty()) {			
 		Node* current_node = new Node(frontier.top());
 		if (frontier.top().problem == p.get_final_state()) {			

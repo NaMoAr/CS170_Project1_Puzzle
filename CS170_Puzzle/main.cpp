@@ -14,14 +14,49 @@ int main() {
 	cout << "Welcome to XXX (change this to your student ID) 8 puzzle solver." << endl;
 	cout << "Type 1 to use a default puzzle, or 2 to enter your own puzzle." << endl;
 	int puzzle_option = 0;
-	
+	int default_option = 0;
 	cin >> puzzle_option;
 	
 	int first; int second; int third; int forth; int fifth; int sixth; int seventh; int eighth; int ninth;
 	if (puzzle_option == 1) {
-		first = 1; second = 2; third = 3; 
-		forth = 4; fifth = 8; sixth = 0; 
-		seventh = 7; eighth = 6; ninth = 5;
+		cout << "1. Trival" << endl;
+		cout << "2. Very Easy" << endl;
+		cout << "3. Easy" << endl;
+		cout << "4. Doable" << endl;
+		cout << "5. Oh Boy" << endl;
+		cout << "6. Impossible" << endl;
+		cin >> default_option;
+		if (default_option == 1) {
+			first = 1; second = 2; third = 3;
+			forth = 4; fifth = 5; sixth = 6;
+			seventh = 7; eighth = 8; ninth = 0;
+		}
+		if (default_option == 2) {
+			first = 1; second = 2; third = 3;
+			forth = 4; fifth = 5; sixth = 6;
+			seventh = 7; eighth = 0; ninth = 8;
+		}
+		if (default_option == 3) {
+			first = 1; second = 2; third = 0;
+			forth = 4; fifth = 5; sixth = 3;
+			seventh = 7; eighth = 8; ninth = 6;
+		}
+		if (default_option == 4) {
+			first = 0; second = 1; third = 2;
+			forth = 4; fifth = 5; sixth = 3;
+			seventh = 7; eighth = 8; ninth = 6;
+		}
+		if (default_option == 5) {
+			first = 8; second = 7; third = 1;
+			forth = 6; fifth = 0; sixth = 2;
+			seventh = 5; eighth = 4; ninth = 3;
+		}
+		if (default_option == 6) {
+			first = 1; second = 2; third = 3;
+			forth = 4; fifth = 5; sixth = 6;
+			seventh = 8; eighth = 7; ninth = 0;
+		}
+		
 	}
 	else {
 		cout << "Enter your puzzle, use 0 to represent the blank" << endl;
