@@ -18,15 +18,12 @@ struct Node
 	Node* child_4 = nullptr;
 	
 	int uniform_cost;
-	int heuristic_cost;
-	int total_cost;
+	double heuristic_cost;
+	double total_cost;
 
 	//constructors
 	Node(vector<vector<int>> p);
 	Node(vector<vector<int>> p, int uniformCost);
-	Node(const Node& p);
-
-	void operator=(const Node& p);
 
 	void print();
 };

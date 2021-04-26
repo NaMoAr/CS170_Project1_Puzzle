@@ -52,7 +52,7 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 	frontier.push(state);
 
 	int depth = 0;
-	int num_nodes = 0;
+	int num_nodes = 1;
 	int algorithm_expansion = 0;
 	while (!frontier.empty()) {			
 		Node* current_node = new Node(frontier.top());
@@ -83,10 +83,10 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 				child_4->heuristic_cost = p.Misplaced(child_4->problem);
 			}
 			if (algorithm_option == "3") {
-				child_1->heuristic_cost = p.Euclidian_dis(child_1->problem);
-				child_2->heuristic_cost = p.Euclidian_dis(child_2->problem);
-				child_3->heuristic_cost = p.Euclidian_dis(child_3->problem);
-				child_4->heuristic_cost = p.Euclidian_dis(child_4->problem);
+				child_1->heuristic_cost = p.Euclidean_dis(child_1->problem);
+				child_2->heuristic_cost = p.Euclidean_dis(child_2->problem);
+				child_3->heuristic_cost = p.Euclidean_dis(child_3->problem);
+				child_4->heuristic_cost = p.Euclidean_dis(child_4->problem);
 			}
 			
 			
