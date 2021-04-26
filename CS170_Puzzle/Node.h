@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+/* This class allows the creation of the Node object which will continously 
+update each time the state is being executed */
 
 struct Node
 {

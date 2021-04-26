@@ -43,7 +43,7 @@ void AStar::successfull_path(Node state, int num_nodes, int algorithm_expansion)
 	
 }
 
-
+/* Main method for everything? */
 void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 	Problem p;
 	Node state = Node(problem);

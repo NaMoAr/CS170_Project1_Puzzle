@@ -5,6 +5,9 @@
 #include <iostream>
 using namespace std;
 
+/* Contains all methods needed for A* algorithm */
+
+
 class Problem
 {
 private:
