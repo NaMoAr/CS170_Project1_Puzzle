@@ -53,12 +53,16 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 
 	int depth = 0;
 	int num_nodes = 1;
-	int algorithm_expansion = 1;
+	int algorithm_expansion = 0;
 	while (!frontier.empty()) {			
 		Node* current_node = new Node(frontier.top());
 		if (frontier.top().problem == p.get_final_state()) {			
 			depth = frontier.top().uniform_cost;	
 			successfull_path(frontier.top(), num_nodes, algorithm_expansion);
+			cout << "The sequesnce of actions to solve the problem:";
+			for (int i = 0; i < steps_vector.size(); i++) {
+				cout << steps_vector.at(i) << ', ';
+			}
 			break;
 		}
 		else {
@@ -69,11 +73,28 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 
 			frontier.pop();
 
-			
-			Node* child_3 = new Node(p.left(current_node->problem), current_node->uniform_cost + 1);
-			Node* child_4 = new Node(p.right(current_node->problem), current_node->uniform_cost + 1);
 			Node* child_1 = new Node(p.down(current_node->problem), current_node->uniform_cost + 1);
 			Node* child_2 = new Node(p.up(current_node->problem), current_node->uniform_cost + 1);
+			Node* child_3 = new Node(p.left(current_node->problem), current_node->uniform_cost + 1);
+			Node* child_4 = new Node(p.right(current_node->problem), current_node->uniform_cost + 1);
+			
+
+			if (current_node != child_1) {
+				//steps.push_back("Down");
+				child_1->steps = "Down";
+			}
+			if (current_node != child_2) {
+				//steps.push_back("Up");
+				child_2->steps = "Up";
+			}
+			if (current_node != child_3) {
+				//steps.push_back("Left");
+				child_3->steps = "Left";
+			}
+			if (current_node != child_4) {
+				//steps.push_back("Right");
+				child_4->steps = "Right";
+			}
 			
 			
 			if (algorithm_option == "2") { 
@@ -115,6 +136,11 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 				child_4->parent = current_node;
 				frontier.push(*child_4);
 			}
+
+			
+			Node* Chosen_Node = new Node(frontier.top());
+			steps_vector.push_back(Chosen_Node->getSteps());
+			
 		}
 	}
 	if (frontier.empty()) {		
