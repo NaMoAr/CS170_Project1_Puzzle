@@ -113,18 +113,61 @@ vector<vector<int>> Problem::down(vector<vector<int>> problem) {
 
 
 
-int Problem::Euclidian_dis(vector<vector<int>> problem)
+
+
+double Problem::Euclidean_dis(vector<vector<int>> problem)
 {
-	int total = 0;
+	double total = 0.0;
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			total += pow((problem[i][j] - final_state[i][j]), 2);
+			if (problem[i][j] != final_state[i][j] && problem[i][j] != 0) {
+				
+				int final_row_index = 0;
+				int final_column_index = 0;
+				
+		
+				if (problem[i][j] == 1) {
+					final_row_index = 0;
+					final_column_index = 0;
+				}
+				if (problem[i][j] == 2) {
+					final_row_index = 0;
+					final_column_index = 1;
+				}
+				if (problem[i][j] == 3) {
+					final_row_index = 0;
+					final_column_index = 2;
+				}
+				if (problem[i][j] == 4) {
+					final_row_index = 1;
+					final_column_index = 0;
+				}
+				if (problem[i][j] == 5) {
+					final_row_index = 1;
+					final_column_index = 1;
+				}
+				if (problem[i][j] == 6) {
+					final_row_index = 1;
+					final_column_index = 2;
+				}
+				if (problem[i][j] == 7) {
+					final_row_index = 2;
+					final_column_index = 0;
+				}
+				if (problem[i][j] == 8) {
+					final_row_index = 2;
+					final_column_index = 1;
+				}
+
+				total += sqrt(pow(( i - final_row_index), 2) + pow((j - final_column_index), 2));
+			}
+			
 
 		}
 	}
-	return sqrt(total);
+	return total;
 }
 
 int Problem::Misplaced(vector<vector<int>> problem)

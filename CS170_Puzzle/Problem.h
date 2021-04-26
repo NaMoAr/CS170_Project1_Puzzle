@@ -30,7 +30,7 @@ public:
 	vector<vector<int>> down(vector<vector<int>> problem);
 	vector<vector<int>> left(vector<vector<int>> problem);
 	vector<vector<int>> right(vector<vector<int>> problem);
-	int Euclidian_dis(vector<vector<int>> problem);
+	double Euclidean_dis(vector<vector<int>> problem);
 	int Misplaced(vector<vector<int>> problem);
 	void print_state(vector<vector<int>> problem);
 	vector<vector<int>> get_final_state();

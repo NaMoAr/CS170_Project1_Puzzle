@@ -16,8 +16,8 @@ struct Node
 	Node* child_4 = nullptr;
 	
 	int uniform_cost;
-	int heuristic_cost;
-	int total_cost;
+	double heuristic_cost;
+	double total_cost;
 
 	//constructors
 	Node(vector<vector<int>> p);
