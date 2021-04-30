@@ -11,6 +11,7 @@ class AStar
 private:
 	vector <Node> explored;
 	priority_queue <Node, vector<Node>, compare> frontier;
+	vector <string> steps;
 public:
 	bool is_explored(vector<vector<int>> state);
 	void successfull_path(Node state, int num_nodes, int algorithm_expansion);

@@ -14,6 +14,7 @@ using namespace std;
 int main() {
 	/* Create AStar object */
 	AStar astar;
+	Problem steps;
 	/* User input, ask user for default or allow them to create their own */
 	cout << "Welcome to XXX (change this to your student ID) 8 puzzle solver." << endl;
 	cout << "Type 1 to use a default puzzle, or 2 to enter your own puzzle." << endl;
@@ -72,6 +73,7 @@ int main() {
 		cin >> seventh >> eighth >> ninth;
 		cout << "Your given puzzle is:" << endl;
 	}
+
     /* Insert inputs into problem object */
 	Problem problem = Problem(first, second, third, forth, fifth, sixth, seventh, eighth, ninth);
 	problem.print_state(problem.getState());

@@ -19,6 +19,7 @@ private:
 		{4, 5, 6},
 		{7, 8, 0},
 	};
+	//vector<string> steps;
 
 
 public:
@@ -37,6 +38,6 @@ public:
 	int Misplaced(vector<vector<int>> problem);
 	void print_state(vector<vector<int>> problem);
 	vector<vector<int>> get_final_state();
-
+	//void print_vector();
 };
 

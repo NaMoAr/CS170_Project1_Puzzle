@@ -56,6 +56,7 @@ vector<vector<int>> Problem::left(vector<vector<int>> problem) {
 	pair<int, int> new_blank_index;
 	new_blank_index.first = blank_index.first;
 	new_blank_index.second = blank_index.second - 1;
+	//steps.push_back("Left");
 	//move the zero(blankk) tile to the left
 	return swap(blank_index, new_blank_index, problem);
 }
@@ -73,6 +74,7 @@ vector<vector<int>> Problem::right(vector<vector<int>> problem) {
 	pair<int, int> new_blank_index;
 	new_blank_index.first = blank_index.first;
 	new_blank_index.second = blank_index.second + 1;
+	//steps.push_back("Right");
 	//move the zero(blankk) tile to the right
 	return swap(blank_index, new_blank_index, problem);
 }
@@ -90,6 +92,7 @@ vector<vector<int>> Problem::up(vector<vector<int>> problem) {
 	pair<int, int> new_blank_index;
 	new_blank_index.first = blank_index.first - 1;
 	new_blank_index.second = blank_index.second;
+	//steps.push_back("Up");
 	//move the zero(blankk) tile upward
 	return swap(blank_index, new_blank_index, problem);
 }
@@ -107,6 +110,7 @@ vector<vector<int>> Problem::down(vector<vector<int>> problem) {
 	pair<int, int> new_blank_index;
 	new_blank_index.first = blank_index.first + 1;
 	new_blank_index.second = blank_index.second;
+	//steps.push_back("Down");
 	//move the zero(blankk) tile downward
 	return swap(blank_index, new_blank_index, problem);
 }
@@ -200,3 +204,9 @@ void Problem::print_state(vector<vector<int>> problem)
 		cout << endl;
 	}
 }
+
+/*void Problem::print_vector() {
+	for (int i = 0; i < steps.size(); i++) {
+		cout << steps[i];
+	}
+}*/
