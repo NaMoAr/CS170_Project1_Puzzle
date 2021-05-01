@@ -20,15 +20,17 @@ Node::Node(vector<vector<int>> p) {
 	problem = p;
 	uniform_cost = 0;
 	heuristic_cost = 0;
+	steps = "";
 };
 Node::Node(vector<vector<int>> p, int uniformCost) {		
 	problem = p;
 	uniform_cost = uniformCost;
 	heuristic_cost = 0;
+	steps = "";
 };
 
 
-void Node::print() {				
+void Node::print() {
 	print_state(problem);
 }
 
