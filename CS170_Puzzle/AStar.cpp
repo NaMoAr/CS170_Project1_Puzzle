@@ -1,6 +1,6 @@
 #include "AStar.h"
 
-//check to see if a node exists in the explored vector
+//check to see if a node exist in the explored vector
 bool AStar::is_explored(vector<vector<int>> state) {
 	for (int i = 0; i < explored.size(); i++) {
 		if (explored.at(i).problem== state) {
@@ -18,10 +18,9 @@ void AStar::successfull_path(Node state, int num_nodes, int algorithm_expansion)
 	s.push(current_state);					
 	while (current_state.parent != NULL) {			
 		current_state = *current_state.parent;
-		s.push(current_state);
+		s.push(current_state);				
 	}
-
-
+	
 	cout << "Expanding state" << endl;
 	s.top().print();
 	cout << endl;
@@ -41,11 +40,7 @@ void AStar::successfull_path(Node state, int num_nodes, int algorithm_expansion)
 	cout << algorithm_expansion << " nodes." << endl;
 	cout << "The maximum number of nodes in the queue at any one time was ";
 	cout << num_nodes << "." << endl;
-	cout << "The sequence of actions to solve the problem is ( ";
-	for (int i = 0; i < steps.size(); i++) {
-		cout << steps[i]<< " ";
-	}
-	cout << " )";
+	
 }
 
 /* Main method for everything? */
@@ -64,7 +59,6 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 		if (frontier.top().problem == p.get_final_state()) {			
 			depth = frontier.top().uniform_cost;	
 			successfull_path(frontier.top(), num_nodes, algorithm_expansion);
-			//p.print_vector();
 			break;
 		}
 		else {
@@ -101,42 +95,38 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 			child_3->total_cost = child_1->uniform_cost + child_3->heuristic_cost;
 			child_4->total_cost = child_1->uniform_cost + child_4->heuristic_cost;
 
-			// Goes Down
 			if (!is_explored(child_1->problem)) {		
 				current_node->child_1 = child_1;
 				child_1->parent = current_node;
 				frontier.push(*child_1);
 			}
-			// Goes Up
 			if (!is_explored(child_2->problem)) {
 				current_node->child_2 = child_2;
 				child_2->parent = current_node;
 				frontier.push(*child_2);
 			}
-			// Goes Left
 			if (!is_explored(child_3->problem)) {
 				current_node->child_3 = child_3;
 				child_3->parent = current_node;
 				frontier.push(*child_3);
 			}
-			// Goes Right
 			if (!is_explored(child_4->problem)) {
 				current_node->child_4 = child_4;
 				child_4->parent = current_node;
 				frontier.push(*child_4);
 			}
 			
-			if (current_node == child_1->parent) {
-				steps.push_back("Down");
-			}
-			else if (current_node == child_2->parent) {
+			if ((child_1->parent == current_node) && (current_node != child_1)) {
 				steps.push_back("Up");
 			}
-			else if (current_node == child_3->parent) {
-				steps.push_back("Left");
+			else if ((child_2->parent = current_node) && (current_node != child_2)) {
+				steps.push_back("Down");
 			}
-			else if (current_node == child_4->parent) {
+			else if ((child_3->parent = current_node) && (current_node != child_3)) {
 				steps.push_back("Right");
+			}
+			else if ((child_4->parent = current_node) && (current_node != child_4)) {
+				steps.push_back("Left");
 			}
 		}
 	}
