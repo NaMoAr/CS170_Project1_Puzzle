@@ -18,13 +18,13 @@ struct Node
 	int uniform_cost;
 	double heuristic_cost;
 	double total_cost;
-	string steps; 
+	 
 
 	//constructors
 	Node(vector<vector<int>> p);
 	Node(vector<vector<int>> p, int uniformCost);
 
-	string getSteps();
+	
 	void print();
 };
 

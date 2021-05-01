@@ -30,11 +30,6 @@ Node::Node(vector<vector<int>> p, int uniformCost) {
 };
 
 
-string Node::getSteps()
-{
-	return steps;
-}
-
 void Node::print() {
 	print_state(problem);
 }

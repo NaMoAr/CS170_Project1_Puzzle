@@ -56,12 +56,14 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 	int algorithm_expansion = 0;
 	while (!frontier.empty()) {			
 		Node* current_node = new Node(frontier.top());
-		if (frontier.top().problem == p.get_final_state()) {			
+		if (frontier.top().problem == p.get_final_state()) {
 			depth = frontier.top().uniform_cost;	
 			successfull_path(frontier.top(), num_nodes, algorithm_expansion);
-			cout << "The sequesnce of actions to solve the problem:";
-			for (int i = 0; i < steps_vector.size(); i++) {
-				cout << steps_vector.at(i) << ', ';
+			if (algorithm_option != "1") {
+				cout << "The sequesnce of actions to solve the problem:";
+				for (int i = 0; i < steps_vector.size(); i++) {
+					cout << steps_vector[i] << " ";
+				}
 			}
 			break;
 		}
@@ -80,23 +82,31 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 			
 
 			if (current_node != child_1) {
-				//steps.push_back("Down");
+				
 				child_1->steps = "Down";
 			}
 			if (current_node != child_2) {
-				//steps.push_back("Up");
+				
 				child_2->steps = "Up";
 			}
 			if (current_node != child_3) {
-				//steps.push_back("Left");
+				
 				child_3->steps = "Left";
 			}
 			if (current_node != child_4) {
-				//steps.push_back("Right");
+				
 				child_4->steps = "Right";
 			}
 			
 			
+			if (algorithm_option == "1") {
+				child_1->heuristic_cost = 0;
+				child_2->heuristic_cost = 0;
+				child_3->heuristic_cost = 0;
+				child_4->heuristic_cost = 0;
+			}
+
+
 			if (algorithm_option == "2") { 
 				child_1->heuristic_cost = p.Misplaced(child_1->problem);
 				child_2->heuristic_cost = p.Misplaced(child_2->problem);
@@ -121,6 +131,11 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 				child_1->parent = current_node;
 				frontier.push(*child_1);
 			}
+			if (!is_explored(child_4->problem)) {
+				current_node->child_4 = child_4;
+				child_4->parent = current_node;
+				frontier.push(*child_4);
+			}
 			if (!is_explored(child_2->problem)) {
 				current_node->child_2 = child_2;
 				child_2->parent = current_node;
@@ -131,15 +146,20 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 				child_3->parent = current_node;
 				frontier.push(*child_3);
 			}
-			if (!is_explored(child_4->problem)) {
-				current_node->child_4 = child_4;
-				child_4->parent = current_node;
-				frontier.push(*child_4);
-			}
+			
 
 			
 			Node* Chosen_Node = new Node(frontier.top());
-			steps_vector.push_back(Chosen_Node->getSteps());
+			
+			steps_vector.push_back(Chosen_Node->steps);
+			
+
+
+			//To see the chosen nodes that are going to exapnd
+			/*Chosen_Node->print();
+			cout << endl;*/
+			
+			
 			
 		}
 	}
