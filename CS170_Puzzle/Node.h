@@ -18,7 +18,7 @@ struct Node
 	int uniform_cost;
 	double heuristic_cost;
 	double total_cost;
-	 
+	string steps;
 
 	//constructors
 	Node(vector<vector<int>> p);

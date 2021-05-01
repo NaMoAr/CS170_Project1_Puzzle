@@ -65,6 +65,7 @@ void AStar::graph_search(vector<vector<int>> problem, string algorithm_option) {
 					cout << steps_vector[i] << " ";
 				}
 			}
+			cout << endl;
 			break;
 		}
 		else {
