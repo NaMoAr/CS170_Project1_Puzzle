@@ -76,7 +76,7 @@ int main() {
 	cout << "Enter your choice of algorithm" << endl;
 	cout << "1. Uniform Cost Search" << endl;
 	cout << "2. A* with the Misplaced Tile heuristic." << endl;
-	cout << "3. A* with the Eucledian distance heuristic." << endl;
+	cout << "3. A* with the Euclidean  distance heuristic." << endl;
 	
 	
 	cin >> algorithm_option;
