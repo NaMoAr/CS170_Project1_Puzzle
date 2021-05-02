@@ -11,7 +11,7 @@ using namespace std;
 int main() {
 
 	AStar astar;
-	cout << "Welcome to XXX (change this to your student ID) 8 puzzle solver." << endl;
+	cout << "Welcome to 862216499(nmoha034) && 862152050(sbatr009) 8 puzzle solver." << endl;
 	cout << "Type 1 to use a default puzzle, or 2 to enter your own puzzle." << endl;
 	int puzzle_option = 0;
 	int default_option = 0;
