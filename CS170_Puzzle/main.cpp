@@ -14,8 +14,12 @@ using namespace std;
 int main() {
 	/* Create AStar object */
 	AStar astar;
+
+	cout << "Welcome to 862216499(nmoha034) && 862152050(sbatr009) 8 puzzle solver." << endl;
+
 	/* User input, ask user for default or allow them to create their own */
 	cout << "Welcome to XXX (change this to your student ID) 8 puzzle solver." << endl;
+
 	cout << "Type 1 to use a default puzzle, or 2 to enter your own puzzle." << endl;
 	int puzzle_option = 0;
 	int default_option = 0;
@@ -80,7 +84,7 @@ int main() {
 	cout << "Enter your choice of algorithm" << endl;
 	cout << "1. Uniform Cost Search" << endl;
 	cout << "2. A* with the Misplaced Tile heuristic." << endl;
-	cout << "3. A* with the Eucledian distance heuristic." << endl;
+	cout << "3. A* with the Euclidean  distance heuristic." << endl;
 	
 	
 	cin >> algorithm_option;
