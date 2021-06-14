@@ -5,6 +5,7 @@
 #include "Node.h"
 #include <stack>
 using namespace std;
+/* Class contains all algorithms needed to solve the puzzle */
 class AStar
 {
 private:

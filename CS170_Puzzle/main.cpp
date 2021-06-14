@@ -6,18 +6,26 @@
 #include "Problem.h"
 #include "AStar.h"
 
+
+/* Class contains user input and contains links to all other classes and functions */
+
 using namespace std;
 
 int main() {
-
+	/* Create AStar object */
 	AStar astar;
+
 	cout << "Welcome to 862216499(nmoha034) && 862152050(sbatr009) 8 puzzle solver." << endl;
+
+	/* User input, ask user for default or allow them to create their own */
+	cout << "Welcome to XXX (change this to your student ID) 8 puzzle solver." << endl;
+
 	cout << "Type 1 to use a default puzzle, or 2 to enter your own puzzle." << endl;
 	int puzzle_option = 0;
 	int default_option = 0;
 	cin >> puzzle_option;
 	
-	int first; int second; int third; int forth; int fifth; int sixth; int seventh; int eighth; int ninth;
+	int first, second, third, forth, fifth, sixth, seventh, eighth, ninth;
 	if (puzzle_option == 1) {
 		cout << "1. Trival" << endl;
 		cout << "2. Very Easy" << endl;
@@ -68,7 +76,7 @@ int main() {
 		cin >> seventh >> eighth >> ninth;
 		cout << "Your given puzzle is:" << endl;
 	}
-
+    /* Insert inputs into problem object */
 	Problem problem = Problem(first, second, third, forth, fifth, sixth, seventh, eighth, ninth);
 	problem.print_state(problem.getState());
 	
@@ -81,7 +89,7 @@ int main() {
 	
 	cin >> algorithm_option;
 	cout << endl;
-
+    /* Method takes in problem state and user input and uses algorithm to solve 8 puzzle */
 	astar.graph_search(problem.getState(), algorithm_option);
 	
 
