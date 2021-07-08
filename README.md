@@ -31,6 +31,7 @@ and its four possible children. (Every blank tile has four directions to move so
 four children for each node). The Node object also contains a steps variable to keep track of
 which direction the 0 square has to ultimately move each time so at the end, the steps to solve
 the puzzle can be printed out.
+![p1](https://user-images.githubusercontent.com/59351131/124996699-44916a80-dffe-11eb-8278-210c4596cf31.PNG)
 
 
 III. Challenges
@@ -66,6 +67,14 @@ more memory compared to Tree Search.
 
 
 VI. Comparing Heuristic Functions
+
+![p2](https://user-images.githubusercontent.com/59351131/124996797-6c80ce00-dffe-11eb-862a-f917c9852cb4.PNG)
+
+![p3](https://user-images.githubusercontent.com/59351131/124996870-90441400-dffe-11eb-8188-75f8d52887c3.PNG)
+
+![p4](https://user-images.githubusercontent.com/59351131/124996943-b10c6980-dffe-11eb-8905-8ce9304a9872.PNG)
+
+![p5](https://user-images.githubusercontent.com/59351131/124997028-ce413800-dffe-11eb-92b4-b23087dabec8.PNG)
 
 <br />We can see in the above figure, as the puzzle gets harder, the Euclidean Distance Heuristic
 spends less time than Misplaces Tile Heuristic and Uniform Cost Search (with value of zero for
