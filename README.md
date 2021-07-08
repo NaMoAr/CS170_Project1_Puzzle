@@ -14,6 +14,7 @@ distance formula, which calculates the straight-line distance between the curren
 destination. In such a case, the g(n) will be assigned a straight-line distance number however,
 the Euclidean can overestimate the cost.
 
+
 II. Project Design
 
 <br />You can see the diagram of our design below. We have three classes including AStar, Node, and
@@ -31,6 +32,7 @@ four children for each node). The Node object also contains a steps variable to 
 which direction the 0 square has to ultimately move each time so at the end, the steps to solve
 the puzzle can be printed out.
 
+
 III. Challenges
 
 <br />The design and implementations changed many times as the project progressed to come up
@@ -45,6 +47,7 @@ the puzzle. Our first solution seemed to work, however seemed to print out extra
 defined one more class member in the Node class as “steps”. This way every Node carries out
 the way that it has been generated (Up, Down, Left, otr Right).
 
+
 IV. Data structures
 
 <br />We used a 2D vector to hold each puzzle state. The explored set is a vector that holds the Node
@@ -53,6 +56,7 @@ to hold larger puzzle states and Node objects. Vectors are also used to hold the
 reach the final states. The frontier is a priority queue as it allows us to expand the nodes at thelowest cost. We also implemented a tree in the Node class, which allows the best
 representation of the problem to solve.
 
+
 V. Graph Search/ Tree Search
 
 <br />We only implemented a graph search. We had an explored set to make sure to not generate a
@@ -60,11 +64,13 @@ node which is already in the explored set. As a result, there is no need to worr
 inserting repeated nodes in the frontier. This process is more efficient, but comes at the cost of
 more memory compared to Tree Search.
 
+
 VI. Comparing Heuristic Functions
 
 <br />We can see in the above figure, as the puzzle gets harder, the Euclidean Distance Heuristic
 spends less time than Misplaces Tile Heuristic and Uniform Cost Search (with value of zero for
 the Heuristic function) to reach to the final state.
+
 
 VII. Conclusion
 
@@ -76,6 +82,7 @@ complex puzzles, Euclidean Distance Heuristic is better for the same aforementio
 reasons. Uniform Cost Search is only practical for trivial puzzles and becomes quickly
 inefficient as the complexity of the puzzle increases. Overall, heuristics help more and
 more as problems get harder.
+
 
 VIII. Citations
 
