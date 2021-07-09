@@ -1,5 +1,4 @@
-I.  Introduction
-
+**I.  Introduction**
 <br /> In this project, we created a program which solves the eight-puzzle problem. The problem is
 solved using Uniform Cost Search, A* with the Misplaced Tile heuristic, and A* with the
 Euclidean Distance heuristic. The user can enter their own eight-puzzle or use a hard-coded
@@ -15,8 +14,7 @@ destination. In such a case, the g(n) will be assigned a straight-line distance 
 the Euclidean can overestimate the cost.
 
 
-II. Project Design
-
+**II. Project Design**
 <br />You can see the diagram of our design below. We have three classes including AStar, Node, and
 Problem along with the Driver Class. Astar is the class that contains the search algorithm
 implementation. Inside of the graph_serach() method in Astar class, we declared two objects of
@@ -34,8 +32,7 @@ the puzzle can be printed out.
 ![p1](https://user-images.githubusercontent.com/59351131/124996699-44916a80-dffe-11eb-8278-210c4596cf31.PNG)
 
 
-III. Challenges
-
+**III. Challenges**
 <br />The design and implementations changed many times as the project progressed to come up
 with the best solution. For example, there was originally one single function to generate the
 children of a given node. Later, four different functions (the up, down, left, right operations) were
@@ -49,8 +46,7 @@ defined one more class member in the Node class as “steps”. This way every N
 the way that it has been generated (Up, Down, Left, otr Right).
 
 
-IV. Data structures
-
+**IV. Data structures**
 <br />We used a 2D vector to hold each puzzle state. The explored set is a vector that holds the Node
 objects. Vectors are a useful data structure in this case as they are able to dynamically expand
 to hold larger puzzle states and Node objects. Vectors are also used to hold the steps needed to
@@ -58,15 +54,14 @@ reach the final states. The frontier is a priority queue as it allows us to expa
 representation of the problem to solve.
 
 
-V. Graph Search/ Tree Search
-
+**V. Graph Search/ Tree Search**
 <br />We only implemented a graph search. We had an explored set to make sure to not generate a
 node which is already in the explored set. As a result, there is no need to worry about loops or
 inserting repeated nodes in the frontier. This process is more efficient, but comes at the cost of
 more memory compared to Tree Search.
 
 
-VI. Comparing Heuristic Functions
+**VI. Comparing Heuristic Functions**
 
 ![p2](https://user-images.githubusercontent.com/59351131/124996797-6c80ce00-dffe-11eb-862a-f917c9852cb4.PNG)
 
@@ -81,8 +76,7 @@ spends less time than Misplaces Tile Heuristic and Uniform Cost Search (with val
 the Heuristic function) to reach to the final state.
 
 
-VII. Conclusion
-
+**VII. Conclusion**
 <br />After applying the three different algorithms for the provided test cases, it is evident that
 there is a substantial difference between the algorithms in regards to use cases and
 efficiency. For the more simpler problems, it seems using Misplaced Tile Heuristic is the
@@ -93,8 +87,7 @@ inefficient as the complexity of the puzzle increases. Overall, heuristics help 
 more as problems get harder.
 
 
-VIII. Citations
-
+**VIII. Citations**
 <br />1. Lecture slides: To learn the concept of the Heuristic search
 <br />2. http://www.cplusplus.com/ : To review the priority queue and stack STL.3. http://neutrofoton.github.io/blog/2016/12/29/c-plus-plus-priority-queue-with-comparato
 r/ : To familiarize myself with the implementation of priority queue with a comparator
